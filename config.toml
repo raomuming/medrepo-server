@@ -1,0 +1,17 @@
+port = "8888"
+secret = "test"
+
+[mysql]
+host = ""
+user = ""
+password = ""
+db = ""
+port = ""
+
+[redis]
+ip = ""
+port = ""
+
+[wechat]
+appid = ""
+secret = ""
