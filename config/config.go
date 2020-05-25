@@ -29,6 +29,7 @@ type Config struct {
 	Debug  bool `toml:"debug"`
 	Port   string
 	Secret string
+	JwtSecret string `toml:"jwt_secret"`
 	Mysql  `toml:"mysql"`
 	Wechat `toml:"wechat"`
 	Redis  `toml:"redis"`
