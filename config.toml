@@ -13,5 +13,5 @@ ip = ""
 port = ""
 
 [wechat]
-appid = ""
-secret = ""
+appid = "wx577c587e3ea2cbd5"
+secret = "d65bd9243ecc159e967ee6f611fcbe54"
