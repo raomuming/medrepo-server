@@ -8,4 +8,5 @@ import (
 
 func Routes(app *iris.Application) {
 	app.Post("/login", api.Login)
+	app.Get("/question", api.GetQuestion)
 }

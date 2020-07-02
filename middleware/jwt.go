@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"time"
-	"strings"
+	//"strings"
 
 	"medrepo-server/config"
 	"medrepo-server/cache/api"
@@ -63,6 +63,7 @@ func jwtMiddle(ctx iris.Context) {
 }
 
 func skipJWT(path string) bool {
+	/*
 	urls := []string{
 		"/login",
 		"/helps",
@@ -74,6 +75,8 @@ func skipJWT(path string) bool {
 		}
 	}
 	return false
+	*/
+	return true
 }
 
 func GetUserID(ctx iris.Context) uint {
