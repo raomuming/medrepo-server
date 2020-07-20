@@ -11,7 +11,7 @@ import (
 )
 
 type User struct {
-	Model
+	gorm.Model
 	Wechat Wechat
 }
 

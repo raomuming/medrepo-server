@@ -8,10 +8,12 @@ import (
 
 	"medrepo-server/config"
 	"medrepo-server/mlog"
+
+	"github.com/jinzhu/gorm"
 )
 
 type Wechat struct {
-	Model
+	gorm.Model
 	Openid string `json:"openid"`
 	SessionKey string `json:"session_key"`
 	NickName string `json:"nick_name"`

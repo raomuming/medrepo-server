@@ -2,11 +2,11 @@ package model
 
 import (
 	//"strings"
-	//"github.com/jinzhu/gorm"
+	"github.com/jinzhu/gorm"
 )
 
 type Question struct {
-	Model
+	gorm.Model
 	Topic string `json:topic`
 	Options []string `json:"options"`
 	Answer int `json:"answer"`
