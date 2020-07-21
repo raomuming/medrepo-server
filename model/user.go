@@ -3,11 +3,11 @@ package model
 import (
 	"errors"
 
-	"medrepo-server/mlog"
 	"medrepo-server/middleware"
+	"medrepo-server/mlog"
 
-	"github.com/jinzhu/gorm"
 	"github.com/gocolly/colly"
+	"github.com/jinzhu/gorm"
 )
 
 type User struct {

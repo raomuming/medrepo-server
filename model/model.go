@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"medrepo-server/mlog"
 	"medrepo-server/config"
+	"medrepo-server/mlog"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"

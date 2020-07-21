@@ -14,12 +14,12 @@ import (
 
 type Wechat struct {
 	gorm.Model
-	Openid string `json:"openid"`
+	Openid     string `json:"openid"`
 	SessionKey string `json:"session_key"`
-	NickName string `json:"nick_name"`
-	AvatarURL string `json:"avatar_url"`
-	Gender string `json:"gender"`
-	UserID uint `json:"user_id"`
+	NickName   string `json:"nick_name"`
+	AvatarURL  string `json:"avatar_url"`
+	Gender     string `json:"gender"`
+	UserID     uint   `json:"user_id"`
 }
 
 func (w *Wechat) GetOpenid(code string) error {
