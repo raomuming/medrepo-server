@@ -32,6 +32,7 @@ func autoMigrate() {
 	db.AutoMigrate(
 		&User{},
 		&Wechat{},
+		&Question{},
 	)
 }
 

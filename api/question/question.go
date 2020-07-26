@@ -36,6 +36,11 @@ func Create(ctx iris.Context) {
 	return
 }
 
+
+func Get(ctx iris.Context) {
+
+}
+
 func param(ctx iris.Context) *model.Question {
 	params := NewParam{}
 	if err := ctx.ReadJSON(&params); err != nil {
@@ -55,6 +60,5 @@ func param(ctx iris.Context) *model.Question {
 		Options: params.Options,
 		Answer: params.Answer,
 		Analysis: params.Analysis,
-		Chapters: params.Chapters,
 	}
 }
