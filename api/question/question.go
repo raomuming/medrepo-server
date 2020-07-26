@@ -11,11 +11,16 @@ import (
 
 // example: https://github.com/mohuishou/scuplus-go/blob/master/api/lost_find/lost_find.go
 
+type OptionParam struct {
+	Order uint `json:order`
+	Description string `json:description`
+}
+
 type NewParam struct {
 	ID uint `json:"id"`
 	Topic    string   `json:topic`
-	Options  []string `json:"options"`
-	Answer   int      `json:"answer"`
+	Options  []OptionParam `json:"options"`
+	Answer   uint      `json:"answer"`
 	Analysis string   `json:"analysis"`
 	Chapters []uint `json:chapters`
 }
@@ -54,10 +59,17 @@ func param(ctx iris.Context) *model.Question {
 		return nil
 	}
 
+	answerOptions := make([]model.Option, 0)
+	if options := params.Options; options != nil {
+		for _, option := range options {
+			answerOptions = append(answerOptions, model.Option{Order: option.Order, Description: option.Description})
+		}
+	}
+
 	return &model.Question{
 		Model: gorm.Model{ID: params.ID},
 		Topic: params.Topic,
-		Options: params.Options,
+		Options: answerOptions,
 		Answer: params.Answer,
 		Analysis: params.Analysis,
 	}

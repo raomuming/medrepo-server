@@ -4,11 +4,16 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
+type Option struct {
+	gorm.Model
+	Order uint
+	Description string
+}
+
 type Question struct {
 	gorm.Model
 	Topic    string   `json:topic`
-	Options  []string `json:"options"`
-	Answer   int      `json:"answer"`
+	Options  []Option `json:"options"`
+	Answer   uint      `json:"answer"`
 	Analysis string   `json:"analysis"`
-	Chapters []Chapter
 }
