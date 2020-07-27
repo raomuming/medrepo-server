@@ -41,9 +41,30 @@ func Create(ctx iris.Context) {
 	return
 }
 
+type GetParam struct {
+	ID uint `json:"id"`
+}
 
 func Get(ctx iris.Context) {
+	getParam := GetParam{}
+	if err := ctx.ReadJSON(&getParam); err != nil {
+		api.Error(ctx, 80400, "params error", err)
+		return
+	}
+	
+	validate := validator.New()
+	if err := validate.Struct(getParam); err != nil {
+		api.Error(ctx, 80400, "params validate error", err.Error())
+		return
+	}
 
+	question := model.Question{}
+	if err := model.DB().Find(&question, getParam.ID).Error; err != nil {
+		api.Error(ctx, 80003, "get question failed", err)
+		return
+	}
+
+	api.Success(ctx, "success", question)
 }
 
 func param(ctx iris.Context) *model.Question {
