@@ -48,11 +48,13 @@ func Get(ctx iris.Context) {
 		return
 	}
 
-	question := model.Question{}
-	if err := model.DB().Find(&question, id).Error; err != nil {
-		api.Error(ctx, 80003, "get question failed", err)
-		return
-	}
+	var question model.Question
+	var options []model.Option
+
+	question.ID = uint(id)
+
+	model.DB().Model(&question).Related(&options)
+	question.Options = options
 
 	api.Success(ctx, "success", question)
 }
