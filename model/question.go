@@ -7,7 +7,8 @@ import (
 type Option struct {
 	gorm.Model
 	Order uint
-	Description string `gorm:"type:text"`
+	Description string `gorm:"type:varchar(1023)"`
+	QuestionID uint
 }
 
 type Question struct {
