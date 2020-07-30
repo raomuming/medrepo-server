@@ -7,5 +7,6 @@ import (
 type Course struct {
 	gorm.Model
 	Name     string
+	Description string
 	Chapters []Chapter
 }

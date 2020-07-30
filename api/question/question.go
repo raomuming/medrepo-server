@@ -28,6 +28,7 @@ type NewParam struct {
 func Create(ctx iris.Context) {
 	data := param(ctx)
 	if data == nil {
+		api.Error(ctx, 80001, "create failed!", nil)
 		return
 	}
 	
@@ -38,7 +39,6 @@ func Create(ctx iris.Context) {
 	}
 
 	api.Success(ctx, "create success!", nil)
-	return
 }
 
 func Get(ctx iris.Context) {
