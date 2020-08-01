@@ -6,7 +6,7 @@ import (
 
 type Course struct {
 	gorm.Model
-	Name     string
-	Description string
+	Name     string `gorm:"type:varchar(127)" json:"name"`
+	Description string `json:"description" gorm:"type:varchar(255)"`
 	Chapters []Chapter
 }

@@ -6,6 +6,6 @@ import (
 
 type Chapter struct {
 	gorm.Model
-	Name     string
+	Name     string `gorm:"type:varchar(127)" json:"name"`
 	CourseID uint
 }
