@@ -36,6 +36,8 @@ func autoMigrate() {
 		&Question{},
 		&Course{},
 		&Chapter{},
+		&CourseQuestionList{},
+		&QuestionList{},
 	)
 }
 

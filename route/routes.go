@@ -15,4 +15,5 @@ func Routes(app *iris.Application) {
 	app.Post("/course", course.Create)
 	app.Get("/course", course.Get)
 	app.Put("/course/{id:int}", course.AddChapter)
+	app.Post("/question-list", question.CreateQuestionList)
 }
