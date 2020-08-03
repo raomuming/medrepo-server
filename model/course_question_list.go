@@ -9,4 +9,5 @@ type CourseQuestionList struct {
 	gorm.Model
 	CourseID uint
 	Questions []Question
+	QuestionListID uint
 }
